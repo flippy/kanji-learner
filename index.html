@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Kanji Learner</title>
+  <meta name="description" content="">
+  <meta charset="utf-8">
+  <link rel="icon" href="data:;base64,iVBORwOKGO="/>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="css/jquery-ui.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div id="header">
+    <label for="kanji-search-box" class="kanji-search-box-label">Search for a Kanji: </label>
+    <input type="text" class="kanji-search-box" id="kanji-search-box" autocomplete="off" />
+    <div class="language-switcher">
+      <span class="language-switcher-lang" id="language-switcher-lang-de" data-lang="de"><img class="language-switcher-flag" src="img/flag-de.png" alt="Deutsch" />Deutsch</span>
+      /
+      <span class="language-switcher-lang active" id="language-switcher-lang-en" data-lang="en"><img class="language-switcher-flag" src="img/flag-en.ico" alt="Deutsch" />English</span>
+    </div>
+    <div class="practice-links">
+      <a href="http://unckel.de/kanateacher" target="_blank">Practice &#x3042; / &#x30A2</a>
+    </div>
+  </div>
+
+  <div class="history-area">
+    <h2>Last Kanjis</h2>
+    <div class="history-area-tabs">
+      <ul>
+        <li><a href="#kanji-history-list-all">All</a></li>
+        <li><a href="#kanji-history-list-errors">Errors</a></li>
+      </ul>
+      <div id="kanji-history-list-all" class="kanji-history-list"></div>
+      <div id="kanji-history-list-errors" class="kanji-history-list"></div>
+    </div>
+  </div>
+
+  <div class="test-area">
+    <button type="button" id="start-test-button">Start test</button>
+    <div class="remaining-kanjis">Remaining Kanjis: <span class="remaining-kanji-count">0</span> / <span class="remaining-kanji-max">0</span> <span class="remaining-kanji-mistakes">(mistakes: <span class="remaining-kanji-mistakes-count">0</span>)</span></div>
+    <div class="kanji-display"></div>
+    <label id="answer-label" for="answer">Your answer:</label>
+    <input type="text" name="answer" id="answer-textbox"/>
+    <span id="answer-status"></span>
+  </div>
+
+  <div class="filter-area">
+    <div class="kanji-selection"></div>
+  </div>
+  <!--div id="footer">
+    <p class="footer-text">Practice &#x3042; / &#x30A2 <a href="http://unckel.de/kanateacher" target="_blank">here</a></p>
+  </div-->
+  <script src="js/kanji-list.js"></script>
+  <script src="js/kanji-list-de.js"></script>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
+  <script src="js/main.js"></script>
+
+  <div id="learn-overlay">
+    <table id="learn-overlay-table">
+      <thead>
+        <tr>
+          <th>Kanji</th>
+          <th>Meaning</th>
+          <th>kun</th>
+          <th>on</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
